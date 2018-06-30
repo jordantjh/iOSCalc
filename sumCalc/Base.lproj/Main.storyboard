@@ -1,25 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G21013" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sumCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZo-Ts-llm">
+                                <rect key="frame" x="163" y="102" width="51" height="31"/>
+                                <connections>
+                                    <action selector="SwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="E4T-Jr-Kna"/>
+                                </connections>
+                            </switch>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Dm-kD-hyu">
+                                <rect key="frame" x="145" y="165" width="90" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YdL-zU-QJy">
+                                <rect key="frame" x="145" y="255" width="90" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQt-gj-9Dt">
+                                <rect key="frame" x="185" y="217" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRx-2z-NHO">
+                                <rect key="frame" x="158" y="317" width="64" height="30"/>
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9kO-Ha-cPo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyH-ui-bhQ">
+                                <rect key="frame" x="179" y="368" width="16" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QQt-gj-9Dt" firstAttribute="top" secondItem="9Dm-kD-hyu" secondAttribute="bottom" constant="30" id="2Kf-RE-7Xb"/>
+                            <constraint firstItem="cRx-2z-NHO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Ip-0r-fRp"/>
+                            <constraint firstItem="9Dm-kD-hyu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="61l-Ke-03d"/>
+                            <constraint firstItem="xyH-ui-bhQ" firstAttribute="top" secondItem="cRx-2z-NHO" secondAttribute="bottom" constant="30" id="6JU-sD-WVn"/>
+                            <constraint firstItem="lZo-Ts-llm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="EcZ-k5-VLj"/>
+                            <constraint firstItem="9Dm-kD-hyu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="FyT-ug-E6K"/>
+                            <constraint firstItem="9Dm-kD-hyu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="UC3-8Y-aDc"/>
+                            <constraint firstItem="QQt-gj-9Dt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YFe-u3-UZy"/>
+                            <constraint firstItem="9Dm-kD-hyu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="120" id="akV-wC-wAT"/>
+                            <constraint firstItem="xyH-ui-bhQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dgy-gL-o7w"/>
+                            <constraint firstItem="9Dm-kD-hyu" firstAttribute="top" secondItem="lZo-Ts-llm" secondAttribute="bottom" constant="30" id="fh7-kP-w4F"/>
+                            <constraint firstItem="9Dm-kD-hyu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hC0-Ll-08b"/>
+                            <constraint firstItem="YdL-zU-QJy" firstAttribute="top" secondItem="9Dm-kD-hyu" secondAttribute="bottom" constant="60" id="hxH-ih-ntb"/>
+                            <constraint firstItem="YdL-zU-QJy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k8S-sE-ubC"/>
+                            <constraint firstItem="cRx-2z-NHO" firstAttribute="top" secondItem="YdL-zU-QJy" secondAttribute="bottom" constant="30" id="soc-hF-yPK"/>
+                            <constraint firstItem="YdL-zU-QJy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="tS6-on-aDs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Dm-kD-hyu" secondAttribute="trailing" constant="20" id="u6I-ur-GNF"/>
+                            <constraint firstItem="9Dm-kD-hyu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vlg-WO-WjH"/>
+                            <constraint firstItem="lZo-Ts-llm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xjt-gQ-9aW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FyT-ug-E6K"/>
+                                <exclude reference="UC3-8Y-aDc"/>
+                                <exclude reference="akV-wC-wAT"/>
+                                <exclude reference="vlg-WO-WjH"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="arithSign" destination="QQt-gj-9Dt" id="mKm-hV-L35"/>
+                        <outlet property="mainSwitch" destination="lZo-Ts-llm" id="khJ-eh-aWX"/>
+                        <outlet property="n1" destination="9Dm-kD-hyu" id="oxs-fu-hU9"/>
+                        <outlet property="n2" destination="YdL-zU-QJy" id="wJ9-Ny-8RI"/>
+                        <outlet property="result" destination="xyH-ui-bhQ" id="n7h-dr-GHj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="244.5" y="350.5"/>
         </scene>
     </scenes>
 </document>
